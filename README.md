@@ -5,12 +5,23 @@ pinion that lowers a probe tip onto the work; an optical switch sees the touch, 
 travel. An Arduino Pro Micro runs it through an A4988 driver and talks to the sender over USB, so the CNC can
 scan the surface of the stock and level the G-code to it.
 
+![The probe assembly: frame, probe board, NEMA 17 with its pinion, the rack and slide, and the probe tip](images/assembly.png)
+
 > **Made to work with [FluidNCSender](https://github.com/mikeoverbay/FluidNCSender)**, my G-code sender for FluidNC.
 > Its Scan panel connects to the probe, moves the CNC over a grid of points, probes each one (allowing for the
 > probe's offset from the spindle), and levels the G-code with the scan.
 >
 > Other senders can probably use it too, if they are changed to support it: the probe is a plain USB serial
 > device with a few one-line commands (see [Serial commands](#serial-commands-one-per-line)).
+
+## Pictures
+
+| | |
+|---|---|
+| ![Probe board, component side](images/board-front.png) | ![Probe board, trace side](images/board-back.png) |
+| **Probe board, component side:** the Pro Micro, the A4988 driver, the RGB LED, the power terminal block, the capacitors, the 4-pin motor plug and the two 3-pin sensor plugs | **Probe board, trace side:** the copper traces |
+| ![The two optical switches](images/opto-sensors.png) | ![The whole assembly](images/assembly.png) |
+| **The two optical switches:** the home (travel) switch on the frame at the top, and the touch switch riding on the slide | **The whole assembly** |
 
 ## 3D model
 
