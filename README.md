@@ -16,8 +16,9 @@ The firmware is **[firmware/PROBE_OS/PROBE_OS.ino](firmware/PROBE_OS/PROBE_OS.in
 (ATmega32U4: select *Arduino Leonardo* or a Pro Micro board in the Arduino IDE). It needs the **FastLED** library.
 Over USB it shows up as "AutoProbe" by "Coffee CNC", a serial port at 115200 baud.
 
-> ⚠ This is the copy from the CNC PC (2025-12-21). It has no `A` (abort) command, which the probe in use
-> answers, so the newer copy in `OneDrive\Documents\Arduino\PROBE_OS` should replace it.
+> ⚠ This is the copy from the CNC PC (2025-12-21). The copy in `OneDrive\Documents\Arduino\PROBE_OS` on the
+> Windows PC may be newer; if it is, it replaces this one. This copy reads commands only between moves, and it
+> ignores `A` (the abort FluidSender sends when a scan is stopped).
 
 ### Pins
 
