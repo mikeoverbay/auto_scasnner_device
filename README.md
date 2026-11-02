@@ -8,6 +8,9 @@ scan the surface of the stock and level the G-code to it.
 > **Made to work with [FluidNCSender](https://github.com/mikeoverbay/FluidNCSender)**, my G-code sender for FluidNC.
 > Its Scan panel connects to the probe, moves the CNC over a grid of points, probes each one (allowing for the
 > probe's offset from the spindle), and levels the G-code with the scan.
+>
+> Other senders can probably use it too, if they are changed to support it: the probe is a plain USB serial
+> device with a few one-line commands (see [Serial commands](#serial-commands-one-per-line)).
 
 ## Parts list
 
