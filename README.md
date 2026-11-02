@@ -12,6 +12,12 @@ scan the surface of the stock and level the G-code to it.
 > Other senders can probably use it too, if they are changed to support it: the probe is a plain USB serial
 > device with a few one-line commands (see [Serial commands](#serial-commands-one-per-line)).
 
+## 3D model
+
+**[model/Auto Probe Addon.step](model/Auto%20Probe%20Addon.step)**: the whole design (Shapr3D, exported as STEP
+AP242, millimetres), mounted on the PrintNC's Z axis and spindle. Each part's name in the model is followed by
+the link it was bought from. It opens in Fusion 360, FreeCAD, Shapr3D, SolidWorks and most other CAD programs.
+
 ## Parts list
 
 See **[BOM.md](BOM.md)**: the bought parts with where they came from and how many, the parts to make, and how the
