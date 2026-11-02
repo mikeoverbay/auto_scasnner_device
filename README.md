@@ -5,6 +5,10 @@ pinion that lowers a probe tip onto the work; an optical switch sees the touch, 
 travel. An Arduino Pro Micro runs it through an A4988 driver and talks to the sender over USB, so the CNC can
 scan the surface of the stock and level the G-code to it.
 
+> **Made to work with [FluidNCSender](https://github.com/mikeoverbay/FluidNCSender)**, my G-code sender for FluidNC.
+> Its Scan panel connects to the probe, moves the CNC over a grid of points, probes each one (allowing for the
+> probe's offset from the spindle), and levels the G-code with the scan.
+
 ## Parts list
 
 See **[BOM.md](BOM.md)**: the bought parts with where they came from and how many, the parts to make, and how the
