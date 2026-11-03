@@ -37,6 +37,9 @@ The probe bolts straight onto the common **80 mm square, air-cooled spindle** wi
 - mounting plate 110 mm wide, with **4 holes on each side, 35 mm apart, the two rows 95 mm apart**;
 - nose 62 mm across, collet nut 34 mm across.
 
+**The probe's centre is 77.5 mm (3.051 in) from the spindle's centre**, toward −Y. That is the probe offset to
+set in the sender (in FluidNCSender: Scan panel → Probe → Offset from spindle, X 0, Y 3.051).
+
 ## Parts list
 
 See **[BOM.md](BOM.md)**: the bought parts with where they came from and how many, the parts to make, and how the
