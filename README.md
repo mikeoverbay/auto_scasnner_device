@@ -76,6 +76,27 @@ its top and bottom edges, put the board back in exactly the same place after it 
 1/4 in pins are stiff and easy to find. 1/8 in (3.175 mm) or 3 mm pins are also common for small boards, and the
 shank of a drill bit of that size works as a pin.
 
+## ⚠ Set the motor current low
+
+Set the A4988's current **only just high enough to move the probe up and down reliably, and no higher.** The
+probe stops by its two optical switches. If one stops working (a wire breaks off, a plug works loose), the
+firmware keeps driving the motor. With a low current the motor simply **stalls** against the end of travel and
+nothing is hurt. With the current too high it keeps pushing: on this build it once **tore the motor off its
+mount**.
+
+How to set it:
+
+1. Turn the A4988's small adjustment screw (the current limit) almost all the way down.
+2. With the board powered, home the probe (`H`) and probe (`P`) a few times.
+3. If it misses steps or stalls on a normal move, turn the screw up a **little** and try again.
+4. Stop at the first setting where it moves up and down every time, plus only a hair more.
+5. **Check it:** while the probe moves, gently hold the slide with your fingers. The motor should stall and buzz
+   rather than push hard. If it pushes hard, turn the current down.
+
+The screw sets a voltage, Vref, that you can measure between the screw and GND. The current limit is
+Vref ÷ (8 × the sense resistors' value): read the small resistors next to the chip (R050 = 0.05 Ω, R100 = 0.1 Ω,
+R200 = 0.2 Ω). Going by feel, as above, is what matters: the lowest current that moves it reliably.
+
 ## Code
 
 The firmware is **[firmware/PROBE_OS/PROBE_OS.ino](firmware/PROBE_OS/PROBE_OS.ino)**, for the Arduino Pro Micro
