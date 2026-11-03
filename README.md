@@ -29,10 +29,49 @@ scan the surface of the stock and level the G-code to it.
 AP242, millimetres), mounted on the PrintNC's Z axis and spindle. Each part's name in the model is followed by
 the link it was bought from. It opens in Fusion 360, FreeCAD, Shapr3D, SolidWorks and most other CAD programs.
 
+## Fits this spindle
+
+The probe bolts straight onto the common **80 mm square, air-cooled spindle** with a side mounting plate:
+
+- body 80 mm square, 166 mm long (272 mm overall with the nose and the fan cover);
+- mounting plate 110 mm wide, with **4 holes on each side, 35 mm apart, the two rows 95 mm apart**;
+- nose 62 mm across, collet nut 34 mm across.
+
 ## Parts list
 
 See **[BOM.md](BOM.md)**: the bought parts with where they came from and how many, the parts to make, and how the
 assembly goes together.
+
+## Making the probe board
+
+The board is milled on the CNC from a blank copper-clad board (the "prototype board" in the parts list) and cut on
+both sides.
+
+**Cutter.** The pads are about 1.5 to 1.7 mm across on a 2.54 mm (0.1 in) pitch, so only about 0.85 to 1.0 mm of
+copper is left to cut between neighbouring pads, and less where a trace runs between them. The board here was cut
+with a **1/32 in (0.79 mm)** end mill, which only just fits. A smaller one is better: **1/64 in (0.4 mm)**,
+**0.5 mm**, or a fine-point V-bit.
+
+**Level each side.** The copper is thin, so scan the blank with the probe and level the G-code before cutting
+(FluidNCSender's Scan panel), once for each side.
+
+**Two sides, with registration holes.** Two 1/4 in dowel holes on the board's vertical centre line, 1/2 in past
+its top and bottom edges, put the board back in exactly the same place after it is turned over:
+
+![Registration holes: two 1/4 in dowel holes on the board's centre line, 1/2 in past the top and bottom edges](images/registration-holes.png)
+
+1. Fasten the blank to the spoilboard and set X0 Y0 at the board's lower-left corner.
+2. Drill the two holes first, **through the blank and about 1/4 in into the spoilboard**, at X 0.882 in, Y −0.500 in
+   and X 0.882 in, Y 2.698 in.
+3. Cut the front: traces, then the component holes.
+4. Unfasten the board, turn it over **left to right** (around the line through the two holes), and push 1/4 in dowel
+   pins through the board into the spoilboard holes. Don't change X0 Y0.
+5. Cut the back. Its G-code has to be **mirrored around the flip line** (X becomes 1.764 in − X); most PCB CAM
+   programs do this when you pick the bottom side.
+6. Cut the board's outline last, so it stays in the blank until the end.
+
+1/4 in pins are stiff and easy to find. 1/8 in (3.175 mm) or 3 mm pins are also common for small boards, and the
+shank of a drill bit of that size works as a pin.
 
 ## Code
 
